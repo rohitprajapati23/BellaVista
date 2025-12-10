@@ -1,0 +1,493 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+
+
+/* =============================Main Gallery section================================= */
+
+.gallery{
+    background-color: rgb(234, 232, 232);
+}
+.gallery-tittle h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    font-weight: 250;
+    font-size: 3.5rem;
+    text-shadow: 5px 5px 8px black;
+}
+.gallery-tittle span{
+    font-size: 5rem;
+    font-weight: 250;
+    margin-left: 8px;
+}
+.gallery-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 15px;
+}
+.gallery-btn .btn{
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.gallery-btn .btn:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.gallery-imgs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px;
+    gap: 20px;
+}
+.gallery-imgs img{
+    height: 305px;
+    width: auto;
+    border: 4px solid white;
+    border-radius: 5px;
+    transition: transform 1s ease-in-out;
+    box-shadow: 0 0 10px black;
+}
+.gallery-imgs img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+
+.overflow{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background: rgba(0,0,0,0.6);
+}
+.img1{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall1.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.close-btn{
+    font-size: 30px;
+    top: 10px;
+    right: 20px;
+    position: absolute;
+}
+.close-btn:hover{
+    cursor: pointer;
+}
+.img2{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall2.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img3{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall3.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img4{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall4.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img5{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall5.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img6{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall6.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img7{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall7.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img8{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall8.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img9{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall9.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img10{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall10.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img11{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall11.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img12{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall12.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img13{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall13.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img14{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall14.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img15{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall15.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img16{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall16.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img17{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall17.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+.img18{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 1020px;
+    background: url(./images/gall18.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 40px black;
+}
+
+
+/* ============================Booking section======================= */
+
+.book{
+    background: url(./images/gall19.png);
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1.20fr 1fr;
+    padding: 50px;
+    background-attachment: fixed;
+}
+.book-stay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book-stay h1{
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: cursive;
+    color: white;
+}
+.book-direct{
+    background-color: white;
+    padding: 50px;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 40px black;
+}
+.book-direct h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.book-direct h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.book-direct p{
+    opacity: 0.8;
+    margin-top: 5px;
+}
+.book-now-btn{
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #59765e;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    margin-top: 40px;
+    transition: background-color 0.3s ease-in-out;
+}
+.book-now-btn:hover{
+    cursor: pointer;
+    background-color: #5e8965;
+}
+
+
+/* ==================================Subscribe section============================== */
+
+.subscribe{
+    background-color: #59765e;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    padding: 50px;
+}
+.subs-title{
+    font-size: 1.4rem;
+    font-weight: 100;
+    font-family: monospace;
+}
+.subs-detail{
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+.subs-detail input{
+    border-style: none;
+    background-color: transparent;
+    width: 50%;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+.subs-detail ::placeholder{
+    color: white;
+    font-family: cursive;
+    font-size: 1rem;
+}
+.subs-btn{
+    margin-left: 50px;
+    margin-bottom: 22px;
+    font-size: 1rem;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+.subs-btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+
+/* ===============================Footer section============================== */
+
+.footer{
+    background-color: #253442;
+    color: white;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+.footer-contents{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    padding-left: 10%;
+    gap: 2rem;
+}
+.footer-content h3{
+    margin-bottom: 0rem;
+}
+.footer-content p{
+    opacity: 0.8;
+}
+.footer-content ul{
+    list-style: none;
+}
+.footer-content li{
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+.footer-content a{
+    text-decoration: none;
+    color: white;
+}
+
+.social-links a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid #4c5b69;
+}
+.footer-bottom p{
+    margin-top: 1rem;
+}
+
+
+/* ===================Reveal====================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+/* ====================================Arrow======================= */
+.home-arrow {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-radius: 50%;
+    border: 4px solid gold;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.home-arrow:hover {
+    background: #444;
+    transform: scale(1.1);
+}
+
+
+
+
+

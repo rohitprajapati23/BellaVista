@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #323232;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        h2{
+            font-size: 2rem;
+            margin: 50px 0;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.603);
+        }
+
+        .box {
+            background: #fff;
+            color: black;
+            padding: 25px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ddd;
+        }
+        p{
+            margin-top: 30px;
+        }
+        a{
+            color: rgb(117, 164, 234);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.334);
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            background: #0077ff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.332);
+        }
+
+        button:hover {
+            background: #005fcc;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Login</h2>
+
+<div class="box" id="loginBox">
+    <input type="email" id="loginEmail" name="no-autofill-login-email" placeholder="Enter Email" autocomplete="off">
+    <input type="password" id="loginPassword" name="no-autofill-login-pass" placeholder="Enter Password" autocomplete="new-password">
+    <button onclick="userLogin()">Login</button>
+</div>
+
+<div class="box" id="afterLogin" style="display:none;">
+    <h3>Welcome!</h3>
+    <p>Login Successful.</p>
+
+    <button onclick="window.location.href='booking.html'">Book a Room</button>
+    <button onclick="window.location.href='user-bookings.html'">View My Booking</button>
+
+    <button onclick="logout()" style="background:#ff3f3f;">Logout</button>
+</div>
+
+<p>New user? <a href="signup.html">Create Account</a></p>
+
+
+<script>
+
+window.addEventListener("pageshow", function () {
+    localStorage.removeItem("loggedUser");
+
+    document.getElementById("loginEmail").value = "";
+    document.getElementById("loginPassword").value = "";
+
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("afterLogin").style.display = "none";
+});
+
+function userLogin() {
+    let email = document.getElementById("loginEmail").value.trim();
+    let password = document.getElementById("loginPassword").value.trim();
+
+    let users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
+    let found = users.find(u => u.email === email && u.password === password);
+
+    if (!found) {
+        alert("Incorrect email or password!");
+        return;
+    }
+
+    localStorage.setItem("loggedUser", email);
+
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("afterLogin").style.display = "block";
+}
+
+function logout() {
+    localStorage.removeItem("loggedUser");
+    location.reload();
+}
+
+</script>
+
+</body>
+</html>

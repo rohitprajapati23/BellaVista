@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    h2 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        margin-bottom: 40px;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    .nodata {
+        text-align: center;
+        color: red;
+        font-weight: bold;
+        padding: 10px;
+    }
+    button {
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Admin – Users Data Management</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="userTableBody"></tbody>
+</table>
+
+<h2>Admin – Rooms & Services Booking Management</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Rooms / services</th>
+            <th>Price</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Payment</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="bookingTableBody"></tbody>
+</table>
+
+
+
+
+<script>
+
+function loadUsers() {
+    let users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+    let tableBody = document.getElementById("userTableBody");
+    tableBody.innerHTML = "";
+
+    if (users.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="5" class="nodata">No user signup data found</td></tr>`;
+        return;
+    }
+
+    users.forEach((u, index) => {
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${u.name}</td>
+            <td>${u.email}</td>
+            <td>${u.phone}</td>
+            <td>${u.password}</td>
+            <td>
+                <button onclick="deleteUser(${index})">Delete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+function deleteUser(index) {
+    let users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+    users.splice(index, 1);
+    localStorage.setItem("registeredUsers", JSON.stringify(users));
+    loadUsers();
+}
+
+function loadBookings() {
+    let bookings = JSON.parse(localStorage.getItem("bookingData")) || [];
+    let tableBody = document.getElementById("bookingTableBody");
+    tableBody.innerHTML = "";
+
+    if (bookings.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="8" class="nodata">No booking data found</td></tr>`;
+        return;
+    }
+
+    bookings.forEach((b, index) => {
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            
+            <td>${b.room}</td>
+            <td>${b.price}</td>
+            <td>${b.name}</td>
+            <td>${b.email}</td>
+            <td>${b.phone}</td>
+            <td>${b.payment}</td>
+            <td>
+                <button onclick="deleteBooking(${index})">Delete</button>
+            </td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+}
+
+function deleteBooking(index) {
+    let bookings = JSON.parse(localStorage.getItem("bookingData")) || [];
+    bookings.splice(index, 1);
+    localStorage.setItem("bookingData", JSON.stringify(bookings));
+    loadBookings();
+}
+
+window.onload = () => {
+    loadUsers();
+    loadBookings();
+};
+</script>
+
+</body>
+</html>

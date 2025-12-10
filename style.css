@@ -1,0 +1,1538 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* ===========================Header============================================= */
+
+.header{
+    width: 100%;
+    background: #0000004f;
+}
+
+.navbar{
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo{
+    
+    padding-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: px;
+}
+.logo h3{
+    line-height: 1.2;
+    font-size: 2rem;
+    color: gold;
+    margin-left: 20px;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+.logo p{
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.logo img{
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #9bcaf5;
+}
+
+.nav-links{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    position: absolute;
+    right: 80px;
+}
+
+.nav-links li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.99);
+}
+.nav-links a:hover{
+    cursor: pointer;
+    background-color: #d3d8dd42;
+}
+
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .menu-toggle{
+        display: block;
+        position: fixed;
+        right: 10px;
+    }
+
+    .nav-links{
+        position: fixed;
+        top: 80px;
+        right: 0;
+        background: #253442;
+        width: 200px;
+        
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        display: none;
+    }
+
+    .nav-links.show{
+        display: flex;
+    }
+    
+}
+
+
+
+
+
+/* ======================================Home===================================== */
+
+.hero{
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.hero-content{
+    margin-top: 500px;
+}
+
+.hero-content h2{
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+}
+
+.hero-btn{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+.btn-1{
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: rgb(252, 31, 31);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 5px 5px 10px black;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.179);
+}
+.btn-1:hover{
+    background-color: rgb(184, 10, 10);
+    color: white;
+    cursor: pointer;
+}
+.btn-2{
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    box-shadow: 5px 5px 10px black;
+    text-shadow: 2px 2px 2px black;
+}
+.btn-2:hover{
+    background-color: #aaabab;
+    color: black;
+    cursor: pointer;
+    text-shadow: none;
+    
+}
+
+.bg-video {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+}
+
+.bg-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+}
+.content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+
+
+/* ==============================Luxury and comfort section===================== */
+
+.luxury-comfort{
+    padding: 30px 100px;
+    height: 400px;
+    background: linear-gradient(to right, #405644, #000000);
+    margin-bottom: 150px;
+    padding-right: 0;
+    
+}
+.luxury-comfort h1{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: 80px;
+    color: white;
+    font-family: cursive;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.347);
+}
+.lu-co-imgs{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    margin-top: 50px;
+}
+.lu-co-imgs::-webkit-scrollbar{
+    display: none;
+}
+.lu-co-img img{
+    height: 300px;
+    border-radius: 5px;
+
+}
+.lu-co-img h3{
+    margin-top: 20px;
+    font-size: 1.7rem;
+    font-weight: 100;
+    font-family: monospace;
+}
+
+.lu-co-img{
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+/* ==============================Restaurant intro section======================= */
+
+.restaurant-intro{
+    background: linear-gradient(to bottom, white, rgb(50, 50, 50));
+    padding: 30px 100px;
+}
+
+.welcome-title p{
+    margin-top: 100px;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 1.5rem;
+}
+.intro-content{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+.left h1{
+    font-size: 2.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 80px;
+}
+
+.right img{
+    height: 450px;
+    width: 100%;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    border-radius: 5px;
+    border: 2px solid gold;
+}
+.gallery{
+    padding: 20px 35px;
+    font-size: 1rem;
+    background-color: rgb(252, 31, 31);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 40px;
+    margin-right: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.436);
+}
+.book{
+    padding: 20px 35px;
+    font-size: 1rem;
+    background-color: rgb(252, 31, 31);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 40px;
+    margin-right: 50px;
+    display: block;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.436);
+}
+
+.gallery:hover{
+    cursor: pointer;
+    background-color: rgb(245, 55, 55);
+}
+.book:hover{
+    cursor: pointer;
+    background-color: rgb(248, 61, 61);
+}
+
+
+/* ==============================Rooms======================== */
+.room-section {
+    height: 100vh;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    background-color: rgb(57, 56, 56);
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-top: 0px;
+    color: goldenrod;
+    font-family: cursive;line-height: 1.2;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.347);
+}
+
+.rooms-container {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 50px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.rooms-container::-webkit-scrollbar {
+    display: none;
+}
+
+.room-card {
+    min-width: 450px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    box-shadow: 10px 20px 40px black;
+    margin-bottom: 55px;
+}
+
+.room-img {
+    width: 100%;
+    height: 330px;
+    position: relative;
+}
+
+.room-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inner-left, .inner-right {
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    border: none;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.inner-left { left: 10px; }
+.inner-right { right: 10px; }
+
+.inner-left i, .inner-right i {
+    font-size: 24px;
+}
+
+.room-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.room-info h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.room-info p {
+    color: #555;
+    line-height: 1.4;
+}
+
+.icons {
+    margin: 10px 0 15px;
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.icons i {
+    color: #7d4c00;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.view-btn,
+.gallery-btn {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.view-btn {
+    background: goldenrod;
+    color: white;
+}
+
+.gallery-btn {
+    background: transparent;
+    border: 2px solid #b08b2b;
+    color: #b08b2b;
+}
+
+.more-btn {
+    margin-left: auto;
+    font-weight: 600;
+    color: #b08b2b;
+}
+
+.main-arrow {
+    position: absolute;
+    top: 55%;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid gold;
+    color: gold;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.main-arrow:hover{
+    background-color: goldenrod;
+    color: black;
+    transition: 0.5s ease-in-out;
+}
+
+.left-btn { left: 10px;}
+.right-btn { right: 10px; }
+
+
+
+/* =================================Dinning section=========================== */
+
+.dinning{
+    background: linear-gradient(to right, #000000, #531919);
+    padding: 50px 80px;
+}
+.dinning-title h1{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 540;
+    line-height: 1.2;
+    font-family: cursive;
+    color: rgb(250, 192, 45);
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.347);
+}
+.dinning-contents{
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    margin-top: 50px;
+}
+.dinning-contents::-webkit-scrollbar{
+    display: none;
+}
+.dinning-img img{
+    height: 400px;
+    width: auto;
+    box-shadow: 0 0 10px white;
+}
+.dinning-detail{
+    width: 91%;
+    background-color: white;
+    translate: 10% -20%;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 15px 15px 15px grey;
+}
+.dinning-detail h3{
+    font-size: 1.3rem;
+    font-family: cursive;
+}
+.dinning-detail p{
+    line-height: 1.4;
+    margin-top: 10px;
+}
+.dinning-btn1{
+    margin-top: 25px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    background-color: goldenrod;
+    border: 1px solid goldenrod;
+    color: white;
+    border-radius: 4px;
+}
+.dinning-btn1:hover{
+    cursor: pointer;background-color: rgb(243, 215, 55);
+}
+.dinning-btn2{
+    margin-top: 25px;
+    margin-left: 40px;
+    padding: 15px 40px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid goldenrod;
+    color: goldenrod;
+    border-radius: 4px;
+}
+.dinning-btn2:hover{
+    cursor: pointer;
+    background-color: goldenrod;
+    color: white;
+}
+
+
+/*============================About-section=======================================*/
+
+.about-section{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: linear-gradient(to right, rgb(235, 231, 231),rgb(57, 56, 56));
+}
+.about-title h2{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #11171d;
+    margin-bottom: 5rem;
+    font-family: cursive;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.29);
+}
+.about-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 10%;
+    gap: 5rem;
+    justify-content: space-between;
+}
+.about-info h3{
+    font-size: 1.8rem;
+    color: #070a0e;
+    margin-bottom: 20px;
+}
+.about-content p{
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+.about-img img{
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 0 0 25px white;
+}
+
+
+/*=======================================Contact-section=====================================*/
+
+.contact{
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    background-color: #1c2934;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.contact-title h2{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 55;
+    font-family: cursive;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.contact-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.info h4{
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    color: white;
+}
+.info p{
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.map-section {
+    width: 100%;
+    padding: 20px 40px;
+    /* background-color: red; */
+}
+
+.map-section iframe {
+    width: 80%;
+    border: 4px solid gold;
+    border-radius: 10px;
+    display: block;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    padding: 70px 240px;
+}
+
+@media(max-width: 700px){
+    .contact-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .information{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .map-section iframe{
+        width: 100%;
+    }
+    .map-section{
+        width: 100%;
+        padding: 0;
+    }
+    .contact-title h2{
+        font-size: 2rem;
+    }
+    .info h4{
+        font-size: 1rem;
+    }
+    .map-section h2{
+        font-size: 1.1rem;
+    }
+}
+
+
+/*==================Footer-section=====================*/
+
+.footer{
+    background-color: #253442;
+    background-color: black;
+    color: white;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+.footer-contents{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    padding-left: 10%;
+    gap: 2rem;
+}
+.footer-content h3{
+    margin-bottom: 0rem;
+}
+.footer-content p{
+    opacity: 0.8;
+}
+.footer-content ul{
+    list-style: none;
+}
+.footer-content li{
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+.footer-content a{
+    text-decoration: none;
+    color: white;
+}
+
+.social-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.social-links a:hover{
+    text-shadow: 2px 2px 2px black;
+}
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid #4c5b69;
+}
+.footer-bottom p{
+    margin-top: 1rem;
+}
+
+
+
+/* ===============================Testimonial============== */
+
+.testimonial-section {
+    background: #202020ea;
+    color: white;
+    text-align: center;
+    padding: 80px 4%;
+    width: 100%;
+}
+
+.testimonial-heading {
+    font-size: 45px;
+    color: #f6b800;
+    font-weight: bold;
+    margin-bottom: 50px;
+    font-family: cursive;
+    text-shadow: 5px 5px 8px rgba(81, 77, 55, 0.625);
+}
+
+.testimonial-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.testimonial-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+}
+
+.testimonial.active {
+    display: block;
+    opacity: 1;
+}
+
+.client-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #333;
+}
+
+.testimonial h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.testimonial p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    color: #888;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.arrow:hover {
+    color: white;
+}
+
+.arrow.left {
+    left: -15px;
+}
+
+.arrow.right {
+    right: -15px;
+}
+
+.dots {
+    margin-top: 30px;
+}
+
+.dot {
+    height: 10px;
+    width: 40px;
+    background: #444;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.active-dot {
+    background: white;
+    width: 50px;
+}
+
+.stars{
+    font-size: 25px;
+    gap: 5px;
+    color: gold;
+    margin-bottom: 5px;
+}
+
+
+
+
+/* ====================================Arrow======================= */
+.home-arrow {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-radius: 50%;
+    border: 4px solid gold;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.home-arrow:hover {
+    background: #444;
+    transform: scale(1.1);
+}
+
+#whatsapp{
+    bottom: 120px;
+    border: none;
+    font-size: 3rem;
+    color: rgb(5, 241, 5);
+    background-color: transparent;
+}
+
+
+/* ============================Reveals============================= */
+
+.reveals{
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease-out;
+}
+.reveals.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* ========================================Media Query=========================== */
+
+@media(max-width: 600px){
+    .nav-contents{
+        margin-left: auto;
+    }
+    .nav-content a{
+        font-size: 0.8rem;
+        text-shadow: none;
+    }
+    .bg-video{
+        height: 100vh;
+    }
+    .hero-content{
+        margin-top: 600px;
+    }
+    .hero-content h2{
+        font-size: 1.9rem;
+    }
+    .btn-1, .btn-2{
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+    .luxury-comfort{
+        padding: 10px ;
+    }
+    .luxury-comfort h1{
+        font-size: 1.7rem;
+        margin-top: 50px;
+    }
+    .lu-co-img{
+        margin-top: 50px;
+    }
+    .lu-co-img img{
+        width: 200px;
+        height: 200px;
+
+    }
+    .lu-co-img h3{
+        font-size: 1rem;
+    }
+    .restaurant-intro{
+        padding: 10px;
+        margin-top: -80px;
+    }
+    .welcome-title p{
+        font-size: 1rem;
+    }
+    .intro-content{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .left h1{
+        font-size: 1.7rem;
+    }
+    .gallery, .book{
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .right img{
+        height: 300px;
+    }
+    .dinning{
+        padding: 10px;
+    }
+    .dinning-title h1{
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+    .dinning-img img{
+        width: 200px;
+        height: 250px;
+    }
+    .dinning-detail{
+        height: 200px;
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 100px;
+    }
+    .dinning-detail h3{
+        margin-bottom: -10px;
+        font-size: 1rem;
+    }
+    .dinning-detail p{
+        font-size: 0.7rem;
+        margin-bottom: -10px;
+    }
+    .dinning-btn1, .dinning-btn2{
+        padding: 5px;
+        font-size: 0.7rem;
+    }
+    .about-section{
+        padding: 10px;
+    }
+    .about h2{
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .about-info h3{
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .about-info p{
+        font-size: 1rem;
+        margin-bottom: -40px;
+    }
+    .about-img{
+        margin-bottom: 40px;
+    }
+    .contact-section{
+        padding: 40px;
+    }
+    .contact-info{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .info p{
+        margin-bottom: 30px;
+        font-size: 1rem;
+    }
+    .info h4{
+        font-size: 1.1rem;
+    }
+    .contact-title h2{
+        font-size: 1.7rem;
+    }
+    .footer-content h4{
+        font-size: 1.1rem;
+    }
+    .footer-content p{
+        font-size: 1rem;
+    }
+    .social-links{
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .footer-bottom{
+        font-size: 1rem;
+    }
+    .section-title{
+        font-size: 1.7rem;
+        margin-top: 60px;
+    }
+    .room-section{
+        padding: 10px;
+    }
+    .rooms-container{
+        margin: 0;
+    }
+    .main-arrow{
+        display: none;
+    }
+    #whatsapp{
+        font-size: 2rem;
+    }
+    .home-arrow{
+        font-size: 20px;
+        border: 1px solid gold;
+        padding: 0;
+    }
+
+}
+
+
+@media (max-width: 480px){
+    
+    .nav-contents{
+        margin-left: auto;
+    }
+    .nav-content a{
+        font-size: 0.8rem;
+        text-shadow: none;
+    }
+    .bg-video{
+        height: 100vh;
+    }
+    .hero-content{
+        margin-top: 600px;
+    }
+    .hero-content h2{
+        font-size: 1.9rem;
+    }
+    .btn-1, .btn-2{
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+    .luxury-comfort{
+        padding: 10px ;
+    }
+    .luxury-comfort h1{
+        font-size: 1.7rem;
+        margin-top: 50px;
+    }
+    .lu-co-img{
+        margin-top: 50px;
+    }
+    .lu-co-img img{
+        width: 200px;
+        height: 200px;
+
+    }
+    .lu-co-img h3{
+        font-size: 1rem;
+    }
+    .restaurant-intro{
+        padding: 10px;
+        margin-top: -80px;
+    }
+    .welcome-title p{
+        font-size: 1rem;
+    }
+    .intro-content{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .left h1{
+        font-size: 1.7rem;
+    }
+    .gallery, .book{
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .right img{
+        height: 300px;
+    }
+    .dinning{
+        padding: 10px;
+    }
+    .dinning-title h1{
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+    .dinning-img img{
+        width: 200px;
+        height: 250px;
+    }
+    .dinning-detail{
+        height: 170px;
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 100px;
+    }
+    .dinning-detail h3{
+        margin-bottom: -10px;
+        font-size: 1rem;
+    }
+    .dinning-detail p{
+        font-size: 0.7rem;
+        margin-bottom: -10px;
+    }
+    .dinning-btn1, .dinning-btn2{
+        padding: 5px;
+        font-size: 0.7rem;
+        margin-top: 10px;
+    }
+    .about-section{
+        padding: 10px;
+    }
+    .about h2{
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .about-info h3{
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .about-info p{
+        font-size: 1rem;
+        margin-bottom: -40px;
+    }
+    .about-img{
+        margin-bottom: 40px;
+    }
+    .contact-section{
+        padding: 40px;
+    }
+    .contact-info{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .info p{
+        margin-bottom: 30px;
+        font-size: 0.8rem;
+    }
+    .info h4{
+        font-size: 1rem;
+    }
+    .contact-title h2{
+        font-size: 1.7rem;
+    }
+    .footer-content h3{
+        font-size: 1rem;
+    }
+    .footer-content p{
+        font-size: 0.8rem;
+    }
+    .footer-content li a{
+        font-size: 0.8rem;
+    }
+    .social-links{
+        font-size: 0.7rem;
+        margin-bottom: 30px;
+    }
+    .footer-bottom{
+        font-size: 0.8rem;
+    }
+    .section-title{
+        font-size: 1.7rem;
+        margin-top: 100px;
+    }
+    .room-section{
+        padding: 10px;
+        padding-bottom: -150px;
+    }
+    .rooms-container{
+        margin: 0;
+    }
+    .main-arrow{
+        display: none;
+    }
+    .room-card{
+        min-width: 360px;
+        height: 500px;
+    }
+    .room-img img{
+        height: 300px;
+    }
+    .room-info h2{
+        font-size: 1rem;
+        margin-top: 110px;
+    }
+    .room-info{
+        margin-top: -140px;
+    }
+    .room-info p{
+        font-size: 0.8rem;
+    }
+    .icons{
+        font-size: 0.8rem;
+    }
+    
+    .view-btn,
+    .gallery-btn{
+        font-size: 0.7rem;
+        padding: 7px 10px;
+        margin-right: 190px;
+        margin-top: 20px;
+        width: 100px;
+    }
+    .btns a{
+        font-size: 0.7rem;
+        margin-right: 400px;
+    }
+    .testimonial-heading{
+        font-size: 1.8rem;
+    }
+    .testimonial img{
+        width: 100px;
+        height: 100px;
+    }
+    .testimonial h3{
+        font-size: 1.1rem;
+    }
+    .testimonial p{
+        font-size: 0.7rem;
+    }
+    .stars{
+        font-size: 1.1rem;
+    }
+    
+}
+
+@media(max-width: 750px){
+    .logo h3{
+        font-size: 1.2rem;
+    }
+    .logo img{
+        height: 50px;
+        width: 50px;
+    }
+    .logo{
+        margin-left: -40px;
+    }
+    .nav-contents{
+        margin-left: auto;
+    }
+    .nav-content a{
+        font-size: 1rem;
+        text-shadow: none;
+    }
+    .intro-content{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .dinning-img img{
+        width: 400px;
+        height: 350px;
+    }
+    .dinning-detail{
+        /* height: 180px; */
+        width: 360px;
+        padding: 5px;
+        margin-bottom: 100px;
+    }
+    .dinning-detail h3{
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+    .dinning-detail p{
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+    }
+    .dinning-btn1, .dinning-btn2{
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        margin-top: 10px;
+        margin-bottom: 4px;
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .luxury-comfort,
+    .restaurant-intro,
+    .dinning,
+    .about-section{
+        padding: 15px;
+    }
+    .section-title{
+        font-size: 1.7rem;
+    }
+    .room-section{
+        padding: 10px;
+    }
+    .rooms-container{
+        margin: 0;
+    }
+    .main-arrow{
+        display: none;
+    }
+}
+
+@media (max-width: 430px){
+    
+    .nav-contents{
+        margin-left: auto;
+    }
+    .nav-content{
+        gap: 10px;
+    }
+    .nav-content a{
+        font-size: 0.8rem;
+        text-shadow: none;
+    }
+    .bg-video{
+        height: 100vh;
+    }
+    .hero-content{
+        margin-top: 600px;
+    }
+    .hero-content h2{
+        font-size: 1.9rem;
+    }
+    .btn-1, .btn-2{
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+    .luxury-comfort{
+        padding: 10px ;
+    }
+    .luxury-comfort h1{
+        font-size: 1.7rem;
+        margin-top: 50px;
+    }
+    .lu-co-img{
+        margin-top: 50px;
+    }
+    .lu-co-img img{
+        width: 200px;
+        height: 200px;
+
+    }
+    .lu-co-img h3{
+        font-size: 1rem;
+    }
+    .restaurant-intro{
+        padding: 10px;
+        margin-top: -80px;
+    }
+    .welcome-title p{
+        font-size: 1rem;
+    }
+    .intro-content{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .left h1{
+        font-size: 1.7rem;
+    }
+    .gallery, .book{
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .right img{
+        height: 300px;
+    }
+    .dinning{
+        padding: 10px;
+    }
+    .dinning-title h1{
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+    .dinning-img img{
+        margin-left: 20px;
+        width: 350px;
+        height: 300px;
+    }
+    .dinning-detail{
+        height: 150px;
+        width: 340px;
+        padding: 5px;
+        margin-bottom: 100px;
+    }
+    .dinning-detail h3{
+        margin-bottom: -10px;
+        font-size: 1rem;
+    }
+    .dinning-detail p{
+        font-size: 0.7rem;
+        margin-bottom: -10px;
+    }
+    .dinning-btn1, .dinning-btn2{
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        margin-top: 30px;
+    }
+    .about-section{
+        padding: 10px;
+    }
+    .about h2{
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .about-info h3{
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .about-info p{
+        font-size: 1rem;
+        margin-bottom: -40px;
+    }
+    .about-img{
+        margin-bottom: 40px;
+    }
+    .contact-section{
+        padding: 40px;
+    }
+    .contact-info{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .info p{
+        margin-bottom: 30px;
+        font-size: 0.8rem;
+    }
+    .info h4{
+        font-size: 1rem;
+    }
+    .contact-title h2{
+        font-size: 1.7rem;
+    }
+    .footer-content h3{
+        font-size: 1rem;
+    }
+    .footer-content p{
+        font-size: 0.8rem;
+    }
+    .footer-content li a{
+        font-size: 0.8rem;
+    }
+    .social-links{
+        font-size: 0.7rem;
+        margin-bottom: 30px;
+    }
+    .footer-bottom{
+        font-size: 0.8rem;
+    }
+    .section-title{
+        font-size: 1.7rem;
+    }
+    .room-section{
+        padding: 10px;
+    }
+    .rooms-container{
+        margin: 0;
+    }
+    .main-arrow{
+        display: none;
+    }
+    .room-card{
+        min-width: 360px;
+        height: 500px;
+    }
+    .room-img img{
+        height: 300px;
+    }
+    .room-info h2{
+        font-size: 1rem;
+        margin-top: 110px;
+    }
+    .room-info{
+        margin-top: -140px;
+    }
+    .room-info p{
+        font-size: 0.8rem;
+    }
+    .icons{
+        font-size: 0.8rem;
+    }
+    
+    .view-btn,
+    .gallery-btn{
+        font-size: 0.7rem;
+        padding: 7px 10px;
+        margin-right: 190px;
+        margin-top: 20px;
+        width: 100px;
+    }
+    .btns a{
+        font-size: 0.7rem;
+        margin-right: 400px;
+    }
+
+}

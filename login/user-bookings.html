@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Booking Status</title>
+    <link rel="stylesheet" href="user-bookings.css">
+</head>
+<body>
+
+    <style>
+        body {
+    font-family: Arial;
+    background: #f3f3f3;
+    text-align: center;
+    padding: 20px;
+}
+
+.box {
+    width: 95%;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #999;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #000;
+    color: white;
+}
+
+    </style>
+
+<h2>Your Booking Status</h2>
+
+<div class="box">
+    <table id="userBookingTable">
+        <thead>
+            <tr>
+                <th>Rooms / Services</th>
+                <th>Price</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Payment</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+    let table = document.querySelector("#userBookingTable tbody");
+
+function loadUserBookings() {
+    let loggedUser = localStorage.getItem("loggedUser");
+
+    if (!loggedUser) {
+        alert("Please login first!");
+        window.location.href = "logins.html";
+        return;
+    }
+
+    let bookings = JSON.parse(localStorage.getItem("bookingData")) || [];
+
+    let userBookings = bookings.filter(b => b.user === loggedUser);
+
+    table.innerHTML = "";
+
+    if (userBookings.length === 0) {
+        table.innerHTML = `<tr><td colspan="6">No bookings found.</td></tr>`;
+        return;
+    }
+
+    userBookings.forEach(b => {
+        let row = `
+            <tr>
+                <td>${b.room}</td>
+                <td>₹${b.price}</td>
+                <td>${b.name}</td>
+                <td>${b.phone}</td>
+                <td>${b.payment}</td>
+                <td>Confirmed</td>
+            </tr>
+        `;
+        table.innerHTML += row;
+    });
+}
+
+loadUserBookings();
+
+</script>
+
+</body>
+</html>

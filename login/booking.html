@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    
+</head>
+<body>
+
+    <style>
+        html,body {
+    font-family: Arial, sans-serif;
+    background: #2d2c2c;
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.799);
+    margin: 50px 0;
+    line-height: 1.4;
+}
+
+.booking-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 550px;
+}
+.booking-container p{
+    text-align: center;
+    margin-top: 420px;
+    color: white;
+}
+
+.step {
+    text-align: center;
+    width: 30%;
+    margin-left: 33%;
+    margin-top: 20px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px white;
+    border-radius: 10px;
+    transition: all 0.5s;
+    padding-bottom: 30px;
+
+}
+@media (max-width: 800px){
+    .title{
+        font-size: 1.7rem;
+    }
+    .step{
+        width: 80%;
+        margin-left: 0;
+    }
+    .booking-container{
+        padding-right: 100px;
+        overflow-x: hidden;
+    }
+    option{
+        font-size: 0.6rem;
+    }
+}
+@media(max-width: 520px){
+    .title{
+        font-size: 1.4rem;
+    }
+    .step{
+        width: 70%;
+    }
+    .step h2{
+        font-size: 1.3rem;
+    }
+    option{
+        font-size: 0.6rem;
+    }
+}
+.step h2{
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.14);
+}
+
+.step.active {
+    left: 0;
+}
+
+.step.inactive {
+    left: -100%;
+}
+
+input, select{
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.316);
+}
+select:hover{
+    cursor: pointer;
+}
+button{
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(224, 224, 224);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.388);
+}
+button:hover{
+    cursor: pointer;
+}
+input{
+    width: 95%;
+}
+.step2{
+    height: 500px;
+}
+h4{
+    color: white;
+    text-align: center;
+}
+a{
+    color: rgb(76, 76, 240);
+}
+
+    </style>
+
+<h1 class="title">Book Your Rooms & Services at<br>Bella Vista Resort</h1>
+
+<h4>New User? <a href="signup.html">Signup</a></h4>
+<div class="booking-container">
+
+    <!-- ==== STEP 1 : Select Room ==== -->
+    <div class="step" id="step1">
+        <h2>Select Your Rooms & Services</h2>
+        
+        <select id="roomType">
+    <option value="">-- Choose Room / Service --</option>
+    <option value="Deluxe Suite (Room) - 5000">Deluxe Suite (Room) — ₹5000 per night</option>
+    <option value="Luxury Suite (Room) - 7000">Luxury Suite (Room) — ₹7000 per night</option>
+    <option value="Premium Room (Room) - 6000">Premium Room (Room) — ₹6000 per night</option>
+    <option value="Executive Room (Room) - 4500">Executive Room (Room) — ₹4500 per night</option>
+    <option value="Superior Room (Room) - 3500">Superior Room (Room) — ₹3500 per night</option>
+    <option value="Banquet Hall (Service) - 2000000">Banquet Hall (Service) - ₹20 Lacs for 24 Hours</option>
+    <option value="Superior Room (Service) - 100000">Conference Hall (Service) - ₹1 Lacs for 24 Hours</option>
+    <option value="Table Booking (Table) - 50000">Table Booking (Table) — ₹50000 per night</option>
+    
+    
+</select>
+
+        <button onclick="nextStep(1)">Next</button>
+    </div>
+
+    <!-- ==== STEP 2 : Personal Details ==== -->
+    <div class="step" id="step2">
+        <h2>Personal Details</h2>
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <button onclick="prevStep(2)">Back</button>
+        <button onclick="nextStep(2)">Next</button>
+    </div>
+
+    <!-- ==== STEP 3 : Payment Mode ==== -->
+    <div class="step" id="step3">
+        <h2>Select Payment Mode</h2>
+        <select id="payment">
+            <option value="">-- Select Payment --</option>
+            <option value="UPI">UPI</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Cash">Cash</option>
+        </select>
+        <button onclick="prevStep(3)">Back</button>
+        <button onclick="submitBooking()">Submit</button>
+    </div>
+
+</div>
+
+<script>
+    let currentStep = 1;
+
+document.getElementById("step1").classList.add("active");
+
+function nextStep(step) {
+    let valid = validate(step);
+    if (!valid) return;
+
+    document.getElementById("step" + step).classList.remove("active");
+    document.getElementById("step" + step).classList.add("inactive");
+
+    currentStep = step + 1;
+    document.getElementById("step" + currentStep).classList.add("active");
+}
+
+function prevStep(step) {
+    document.getElementById("step" + step).classList.remove("active");
+    document.getElementById("step" + step).classList.add("inactive");
+
+    currentStep = step - 1;
+    document.getElementById("step" + currentStep).classList.add("active");
+}
+
+function validate(step) {
+    if (step === 1) {
+        let room = document.getElementById("roomType").value;
+        
+        if (room === "") {
+            alert("Please select room type!");
+            return false;
+        }
+    }
+
+    if (step === 2) {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        if (name === "" || email === "") {
+            alert("Please fill all details!");
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+function submitBooking() {
+
+    let selected = document.getElementById("roomType").value.split(" - ");
+    let roomName = selected[0];
+    let roomPrice = selected[1];
+
+    let booking = {
+        id: Date.now(),
+        room: roomName,
+        price: roomPrice,
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        payment: document.getElementById("payment").value,
+        user: localStorage.getItem("loggedUser")
+    };
+
+    let bookings = JSON.parse(localStorage.getItem("bookingData")) || [];
+    bookings.push(booking);
+    localStorage.setItem("bookingData", JSON.stringify(bookings));
+
+    alert("Booking Successful!");
+    window.location.href = "user-bookings.html";
+    
+}
+</script>
+
+</body>
+</html>

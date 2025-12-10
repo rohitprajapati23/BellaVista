@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #323232;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        h2{
+            font-size: 2rem;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.622);
+        }
+
+        .box {
+            background: #fff;
+            padding: 25px;
+            width: 320px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ddd;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+        }
+        a{
+            color: rgb(117, 164, 234);
+        }
+        p{
+            margin-top: 30px;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            background: #0077ff;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.323);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #005fcc;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Signup</h2>
+
+<div class="box" id="boxs">
+    <input type="text" id="userName" name="no-autofill-name" placeholder="Full Name" autocomplete="off">
+    <input type="email" id="signupEmail" name="no-autofill-email" placeholder="Email" autocomplete="off">
+    <input type="tel" id="signupPhone" name="no-autofill-phone" placeholder="Phone Number" autocomplete="off">
+    <input type="password" id="signupPassword" name="no-autofill-pass" placeholder="Password" autocomplete="new-password">
+    <button onclick="signup()">Signup</button>
+</div>
+
+<p>Already have an account? <a href="logins.html">Login Here</a></p>
+
+<script>
+function signup() {
+    let name = document.getElementById("userName").value.trim();
+    let email = document.getElementById("signupEmail").value.trim();
+    let phone = document.getElementById("signupPhone").value.trim();
+    let password = document.getElementById("signupPassword").value.trim();
+
+    if (!name || !email || !phone || !password) {
+        alert("All fields are required!");
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
+    let exists = users.find(u => u.email === email);
+    if (exists) {
+        alert("User already exists! Please login.");
+        return;
+    }
+
+    let newUser = {
+        name: name,
+        email: email,
+        phone: phone,
+        password: password
+    };
+
+    users.push(newUser);
+    localStorage.setItem("registeredUsers", JSON.stringify(users));
+
+    alert("Signup successful! Please login.");
+    window.addEventListener("pageshow", function () {
+    document.getElementById("userName").value = "";
+    document.getElementById("signupEmail").value = "";
+    document.getElementById("signupPhone").value = "";
+    document.getElementById("signupPassword").value = "";
+});
+    window.location.href = "logins.html";
+}
+</script>
+
+</body>
+</html>
