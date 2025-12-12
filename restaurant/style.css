@@ -95,7 +95,7 @@ html, body{
     }
 
     .nav-links{
-        position: absolute;
+        position: fixed;
         top: 80px;
         right: 0;
         background: #253442;
