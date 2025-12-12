@@ -525,6 +525,16 @@ html, body{
 /* ===========================Media Query============================ */
 
 @media (max-width: 768px) {
+    .logo h3{
+        font-size: 1.2rem;
+    }
+    .logo img{
+        height: 50px;
+        width: 50px;
+    }
+    .logo{
+        margin-left: -40px;
+    }
     .home h1{
         font-size: 2rem;
     }
