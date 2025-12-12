@@ -1216,11 +1216,11 @@ body{
         display: none;
     }
     .room-card{
-        min-width: 360px;
-        height: 500px;
+        min-width: 320px;
+        height: 400px;
     }
     .room-img img{
-        height: 300px;
+        height: 220px;
     }
     .room-info h2{
         font-size: 1rem;
@@ -1510,11 +1510,11 @@ body{
         display: none;
     }
     .room-card{
-        min-width: 360px;
-        height: 500px;
+        min-width: 320px;
+        height: 400px;
     }
     .room-img img{
-        height: 300px;
+        height: 220px;
     }
     .room-info h2{
         font-size: 1rem;
