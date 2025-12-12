@@ -1224,10 +1224,10 @@ body{
     }
     .room-info h2{
         font-size: 1rem;
-        margin-top: 110px;
+        margin-top: 30px;
     }
     .room-info{
-        margin-top: -140px;
+        margin-top: -220px;
     }
     .room-info p{
         font-size: 0.8rem;
@@ -1518,10 +1518,10 @@ body{
     }
     .room-info h2{
         font-size: 1rem;
-        margin-top: 110px;
+        margin-top: 30px;
     }
     .room-info{
-        margin-top: -140px;
+        margin-top: -220px;
     }
     .room-info p{
         font-size: 0.8rem;
