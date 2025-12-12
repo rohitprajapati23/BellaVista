@@ -17,6 +17,24 @@ const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => observer.observe(el));
 
 
+// ====================Toggle======================//
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const links = document.querySelectorAll("#navLinks li a");
+
+// open/close toggle
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+
+// close menu on link click
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+    });
+});
+
+
     // ==============================order===========================//
 
 let addItem = document.querySelectorAll('.order-btn');
