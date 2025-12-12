@@ -1227,7 +1227,7 @@ body{
         margin-top: 30px;
     }
     .room-info{
-        margin-top: -220px;
+        margin-top: -260px;
     }
     .room-info p{
         font-size: 0.8rem;
@@ -1241,7 +1241,7 @@ body{
         font-size: 0.7rem;
         padding: 7px 10px;
         margin-right: 190px;
-        margin-top: 20px;
+        margin-top: 10px;
         width: 100px;
     }
     .btns a{
@@ -1521,7 +1521,7 @@ body{
         margin-top: 30px;
     }
     .room-info{
-        margin-top: -220px;
+        margin-top: -260px;
     }
     .room-info p{
         font-size: 0.8rem;
@@ -1535,7 +1535,7 @@ body{
         font-size: 0.7rem;
         padding: 7px 10px;
         margin-right: 190px;
-        margin-top: 20px;
+        margin-top: 10px;
         width: 100px;
     }
     .btns a{
