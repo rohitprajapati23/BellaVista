@@ -184,7 +184,7 @@ function sendOrderEmail() {
 
     let total = document.querySelector(".total-amount").innerText;
 
-    emailjs.send("service_wj4t25z", "template_7t6un8o", {
+    emailjs.send("service_wj4t25z", "template_oboent5", {
         customer_name: name,
         customer_phone: phone,
         customer_table: tableNo,
@@ -195,7 +195,7 @@ function sendOrderEmail() {
     })
     .then(function() {
 
-        emailjs.send("service_wj4t25z", "template_mt205kl", {
+        emailjs.send("service_wj4t25z", "nmuvwag", {
             to_email: customerEmail,
             customer_name: name,
             order_items: orderList,
