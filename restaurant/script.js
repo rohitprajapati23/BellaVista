@@ -195,7 +195,7 @@ function sendOrderEmail() {
     })
     .then(function() {
 
-        emailjs.send("service_zh9s35u", "nmuvwag", {
+        emailjs.send("service_zh9s35u", "template_nmuvwag", {
             to_email: customerEmail,
             customer_name: name,
             order_items: orderList,
